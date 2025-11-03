@@ -1,0 +1,253 @@
+/* General Reset and Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #1C1C1C; /* AC Milan Black for text */
+    background-color: #f4f4f4; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Color Variables (AC Milan Theme) */
+:root {
+    --rossoneri-red: #E30613;    /* AC Milan Red */
+    --rossoneri-black: #1C1C1C;  /* AC Milan Black (Deep) */
+    --accent-white: #FFFFFF;     /* White for contrast */
+}
+
+/* Header & Navigation */
+.main-header {
+    background-color: var(--rossoneri-black);
+    color: var(--accent-white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Simulate a subtle stripe effect */
+    border-bottom: 5px solid var(--rossoneri-red); 
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--rossoneri-red);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.main-nav ul li a:hover {
+    color: var(--rossoneri-red);
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('image/acmilan-hero.jpg') no-repeat center center/cover; /* Replace with your AC Milan hero image */
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--accent-white);
+    position: relative;
+}
+
+.hero-section::before { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65); /* Darker overlay for text contrast */
+}
+
+.hero-section .container {
+    z-index: 1; 
+}
+
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px var(--rossoneri-black);
+    color: var(--rossoneri-red); /* Title in Red */
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+/* CTA Button Styling */
+.cta-button {
+    display: inline-block;
+    background-color: var(--rossoneri-red);
+    color: var(--accent-white);
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #AA0000; /* Darker Red */
+    transform: translateY(-3px);
+}
+
+.secondary-cta {
+    background-color: var(--rossoneri-black);
+    margin-top: 30px;
+}
+
+.secondary-cta:hover {
+    background-color: #333333;
+}
+
+
+/* Content Sections */
+.content-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.content-section:nth-of-type(odd) {
+    background-color: var(--accent-white);
+}
+
+.content-section:nth-of-type(even) {
+    background-color: #EFEFEF; 
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--rossoneri-black);
+    border-bottom: 4px solid var(--rossoneri-red);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* News Section */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.news-item {
+    background-color: var(--accent-white);
+    border: 1px solid #ddd;
+    border-left: 8px solid var(--rossoneri-red); /* Strong Red strip accent */
+    border-radius: 8px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    box-shadow: 0 8px 20px rgba(227, 6, 19, 0.3); /* Red shadow highlight */
+}
+
+.news-item h4 {
+    color: var(--rossoneri-black);
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+}
+
+/* Squad Section */
+.squad-list {
+    list-style: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.player-item {
+    background-color: var(--rossoneri-black);
+    color: var(--accent-white);
+    width: 280px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border-right: 5px solid var(--rossoneri-red);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+/* Fixtures Section */
+.fixture-list {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.fixture-item {
+    background-color: var(--accent-white);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid var(--rossoneri-black);
+    font-size: 1.1em;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--rossoneri-black);
+    color: #aaaaaa;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 5px solid var(--rossoneri-red);
+}
+
+.main-footer a {
+    color: var(--rossoneri-red);
+    font-weight: 700;
+}
